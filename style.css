@@ -1,21 +1,27 @@
 body {
-    background-color:white;
+    background-color:peru;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
     font-family:cursive Arial, Helvetica, sans-serif;
     font-style: italic;
+    color: whitesmoke;
 }
 
 .start-screen {
-    text-align: center;
+    text-align:justify;
 }
+
 
 .panel {
     width: 200px;
     height: 200px;
     display: inline-block;
+    cursor: pointer;
+    margin: auto;
+    padding: 10px;
 }
 
 .bottom-left {
@@ -37,3 +43,4 @@ h1 {
     border-top-left-radius: 100%;
     background-color: green;
 }
+
