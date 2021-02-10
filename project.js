@@ -8,11 +8,17 @@ const userClickedPattern = []
 
 let start = false
 
+
 $( () => {
-    const $panel = $('#panel')
-    
-    const addText = () => {
-        $('body').append('Button has been clicked')
-    }    
+    $('.panel').on('click', ()=> {
+        // console.log('panel has been clicked')
+        const $panelColor = panelColors
+
+        if ()
     })
-     
+
+    
+    $('button').on('click', ()=>{
+        console.log('button has been clicked')
+    })
+    }) 
