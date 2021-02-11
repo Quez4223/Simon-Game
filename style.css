@@ -27,20 +27,28 @@ h1 {
 .bottom-left {
     border-bottom-left-radius: 100%;
     background-color: indigo;
+    box-shadow: 10px 5px 5px cyan;
+
 }
 
 .bottom-right {
     border-bottom-right-radius: 100%;
     background-color: gold;
+    box-shadow: 10px 5px 5px cyan;
+
 }
 
 .top-right {
     border-top-right-radius: 100%;
     background-color: red;
+    box-shadow: 10px 5px 5px cyan;
+
 }
 
 .top-left {
     border-top-left-radius: 100%;
     background-color: green;
+    box-shadow: 10px 5px 5px cyan;
+
 }
 

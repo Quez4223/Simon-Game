@@ -9,35 +9,37 @@ const userClickedPattern = []
 let start = false
 
 
-$( () => {
-    $('.panel').on('click', (event)=> {
-        // console.log('panel has been clicked')
+$(() => {
+    $('.panel').on('click', (event) => {
         const $panelColor = panelColors
-        if ($(event.currentTarget).hasClass('panel top-left')){
+        if ($(event.currentTarget).hasClass('panel top-left')) {
             console.log(panelColors[0])
         } else {
-            if ($(event.currentTarget).hasClass('panel top-right')){
+            if ($(event.currentTarget).hasClass('panel top-right')) {
                 console.log(panelColors[1])
             } else {
-                if ($(event.currentTarget).hasClass('panel bottom-left')){
+                if ($(event.currentTarget).hasClass('panel bottom-left')) {
                     console.log(panelColors[2])
                 } else {
-                    if ($(event.currentTarget).hasClass('panel bottom-right')){
+                    if ($(event.currentTarget).hasClass('panel bottom-right')) {
                         console.log(panelColors[3])
+                    } else {
+                        if ($(event.currentTarget).hasClass('panel')) {
+                            console.log(panelColors).blink(500)
+                        }
                     }
-                }
+                } 
             }
 
         }
-        
+
+
+    })
     
+    $('button').on('click', () => {
+        const $gamePattern = Math.floor(Math.random() * 4)
+        gamePattern.push(panelColors)
+        console.log($gamePattern)
     })
 
-    
-    
-    
-    
-    $('button').on('click', ()=>{
-        console.log('button has been clicked')
-    })
-    }) 
+}) 
