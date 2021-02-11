@@ -4,9 +4,9 @@ const panelColors = ['green', 'red', 'indigo', 'yellow']
 
 const gamePattern = []
 
-const userClickedPattern = []
+const userClick = 0
 
-let start = false
+const noPress = true
 
 
 $(() => {
@@ -38,8 +38,23 @@ $(() => {
     
     $('button').on('click', () => {
         const $gamePattern = Math.floor(Math.random() * 4)
-        gamePattern.push(panelColors)
+        gamePattern.push(panelColors[$gamePattern])
         console.log($gamePattern)
+        console.log(gamePattern)
     })
+
+
+    simonSays() {
+        noPress = true
+        let delay
+        if (gamePattern.length > 10) {
+            delay = 400
+        }
+        const pause = setTimeout() {
+            for (let i = 0; i < gamePattern.length; i++) {
+            
+            }
+        }
+    }
 
 }) 
