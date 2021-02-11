@@ -55,7 +55,7 @@ $(() => {
         console.log(gamePattern)
 
     }
-    $('button').on('click', start)
+    $('button').on('click', simonStart)
 
     const userPatternCheck = () => {
         for (let i = 0; i < userClick.length ; i++) {
@@ -63,7 +63,7 @@ $(() => {
                 console.log('success')
                 simonStart()
             } else {
-                console.log('wrong')
+                console.log('Game Over!')
             }
         }
 
@@ -91,3 +91,8 @@ $(() => {
 
 // checkAnswer = if gamePattern === userClick(gamePattern.length - 1) console.log(winningGamePattern) else console.log('game over!') 
 // if gamePattern.length > 20
+// make game have sound 
+// make panels flash
+// add setTimeout to function so there is a delay between user and computer
+// clean up code 
+// update CSS
