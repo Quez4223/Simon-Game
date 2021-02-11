@@ -48,7 +48,7 @@ $(() => {
 
 
     })
-    const start = () => {
+    const simonStart = () => {
         const $gamePattern = Math.floor(Math.random() * 4)
         gamePattern.push(panelColors[$gamePattern])
         console.log($gamePattern)
@@ -61,7 +61,7 @@ $(() => {
         for (let i = 0; i < userClick.length ; i++) {
             if (userClick[i] === gamePattern[i]) {
                 console.log('success')
-                start()
+                simonStart()
             } else {
                 console.log('wrong')
             }
@@ -72,12 +72,6 @@ $(() => {
 })
 
 
-
-// opening move after click start
-// simonStart() {
-//     $gamePattern
-//     userClick = 0
-// }
 
 
 
