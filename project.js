@@ -75,3 +75,6 @@ $(() => {
 //     }, );
 
 // }
+
+// checkAnswer = if gamePattern === userClick(gamePattern.length - 1) console.log(winningGamePattern) else console.log('game over!') 
+// if gamePattern.length > 20
