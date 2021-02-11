@@ -4,7 +4,7 @@ const panelColors = ['green', 'red', 'indigo', 'yellow']
 
 const gamePattern = []
 
-const userClick = 0
+const userClick = []
 
 const started = false
 
@@ -16,35 +16,60 @@ $(() => {
         const $panelColor = panelColors
         if ($(event.currentTarget).hasClass('panel top-left')) {
             console.log(panelColors[0])
+            userClick.push(panelColors[0])
+            console.log(userClick)
+            userPatternCheck()
         } else {
             if ($(event.currentTarget).hasClass('panel top-right')) {
                 console.log(panelColors[1])
+                userClick.push(panelColors[1])
+                console.log(userClick)
+                userPatternCheck()
+
             } else {
                 if ($(event.currentTarget).hasClass('panel bottom-left')) {
                     console.log(panelColors[2])
+                    userClick.push(panelColors[2])
+                    console.log(userClick)
+                    userPatternCheck()
+
                 } else {
                     if ($(event.currentTarget).hasClass('panel bottom-right')) {
                         console.log(panelColors[3])
-                    } 
-                    
-                } 
+                        userClick.push(panelColors[3])
+                        console.log(userClick)
+                        userPatternCheck()
+
+                    }
+                }
             }
 
         }
 
 
     })
-    
-    $('button').on('click', () => {
+    const start = () => {
         const $gamePattern = Math.floor(Math.random() * 4)
         gamePattern.push(panelColors[$gamePattern])
         console.log($gamePattern)
         console.log(gamePattern)
 
-        
-    })
+    }
+    $('button').on('click', start)
 
-}) 
+    const userPatternCheck = () => {
+        for (let i = 0; i < userClick.length ; i++) {
+            if (userClick[i] === gamePattern[i]) {
+                console.log('success')
+                start()
+            } else {
+                console.log('wrong')
+            }
+        }
+
+    }
+
+})
 
 
 
@@ -58,23 +83,17 @@ $(() => {
 
 // winning condition idea 
 //  winningGamePattern() { 
-//     let times = 0;
 //       const blinkTop = setTimeout(function() {
 //         $('#panel top-left').effect('bounce', 1);
 //         $('#panel top-right').effect('bounce', 1);
-//       }, 250);
+//       },);
 //       const blinkBottom = setTimeout(function() {
 //         $('#panel bottom-left').effect('bounce', 1);
 //         $('#panel bottom-right').effect('bounce', 1);
-//       }, 250);
-//       if (times > _) {
+//       },);
 //         const newGame = setTimeout(function() { 
 //           simonStart();
-//         }, );
-//       }
-//     }, );
-
-// }
+//
 
 // checkAnswer = if gamePattern === userClick(gamePattern.length - 1) console.log(winningGamePattern) else console.log('game over!') 
 // if gamePattern.length > 20
