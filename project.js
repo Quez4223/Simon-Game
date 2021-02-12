@@ -19,12 +19,14 @@ $(() => {
             userClick.push(panelColors[0])
             console.log(userClick)
             userPatternCheck()
+            animatePress()
         } else {
             if ($(event.currentTarget).hasClass('panel top-right')) {
                 console.log(panelColors[1])
                 userClick.push(panelColors[1])
                 console.log(userClick)
                 userPatternCheck()
+                animatePress()
 
             } else {
                 if ($(event.currentTarget).hasClass('panel bottom-left')) {
@@ -32,6 +34,7 @@ $(() => {
                     userClick.push(panelColors[2])
                     console.log(userClick)
                     userPatternCheck()
+                    animatePress()
 
                 } else {
                     if ($(event.currentTarget).hasClass('panel bottom-right')) {
@@ -39,6 +42,7 @@ $(() => {
                         userClick.push(panelColors[3])
                         console.log(userClick)
                         userPatternCheck()
+                        animatePress()
 
                     }
                 }
@@ -49,7 +53,7 @@ $(() => {
 
     })
     const simonStart = () => {
-        const $gamePattern = Math.floor(Math.random() * 4)
+        const $gamePattern = (Math.floor(Math.random() * 4) + 1)
         gamePattern.push(panelColors[$gamePattern])
         console.log($gamePattern)
         console.log(gamePattern)
@@ -69,6 +73,12 @@ $(() => {
 
     }
 
+    const animatePress = (currentColor) => {
+        $('#' + currentColor).addClass('flash')
+             
+        
+    }
+
 
 })
 
@@ -76,24 +86,3 @@ $(() => {
 
 
 
-// winning condition idea 
-//  winningGamePattern() { 
-//       const blinkTop = setTimeout(function() {
-//         $('#panel top-left').effect('bounce', 1);
-//         $('#panel top-right').effect('bounce', 1);
-//       },);
-//       const blinkBottom = setTimeout(function() {
-//         $('#panel bottom-left').effect('bounce', 1);
-//         $('#panel bottom-right').effect('bounce', 1);
-//       },);
-//         const newGame = setTimeout(function() { 
-//           simonStart();
-
-
-// checkAnswer = if gamePattern === userClick(gamePattern.length - 1) console.log(winningGamePattern) else console.log('game over!') 
-// if gamePattern.length > 20
-// make game have sound 
-// make panels flash
-// add setTimeout to function so there is a delay between user and computer
-// clean up code 
-// update CSS

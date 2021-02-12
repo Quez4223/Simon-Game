@@ -27,28 +27,29 @@ h1 {
 .bottom-left {
     border-bottom-left-radius: 100%;
     background-color: indigo;
-    box-shadow: 0px 2px 5px cyan;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
+    box-shadow: 0px 2px 5px black;
 
 }
 
 .bottom-right {
     border-bottom-right-radius: 100%;
     background-color: gold;
-    box-shadow: 0px 2px 5px cyan;
+    box-shadow: 0px 2px 5px black;
 
 }
 
 .top-right {
     border-top-right-radius: 100%;
     background-color: red;
-    box-shadow: 0px 2px 5px cyan;
+    box-shadow: 0px 2px 5px black;
 
 }
 
 .top-left {
     border-top-left-radius: 100%;
     background-color: green;
-    box-shadow: 0px 2px 5px cyan;
+    box-shadow: 0px 2px 5px black;
 
 }
 
