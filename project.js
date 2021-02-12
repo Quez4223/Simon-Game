@@ -53,7 +53,7 @@ $(() => {
 
     })
     const simonStart = () => {
-        const $gamePattern = (Math.floor(Math.random() * 4) + 1)
+        const $gamePattern = Math.floor(Math.random() * 4)
         gamePattern.push(panelColors[$gamePattern])
         console.log($gamePattern)
         console.log(gamePattern)
@@ -73,9 +73,10 @@ $(() => {
 
     }
 
-    const animatePress = (currentColor) => {
-        $('#' + currentColor).addClass('flash')
-             
+    const animatePress = (event) => {
+        if ($(event.currentTarget).hasClass('panel top-left').addClass('.flash')) {
+            console.log('.flash')
+        }            
         
     }
 
