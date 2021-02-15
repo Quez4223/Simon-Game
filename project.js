@@ -8,7 +8,7 @@ const userClick = []
 
 const started = false
 
-const level = 0
+let level = 0
 
 
 $(() => {
@@ -19,14 +19,14 @@ $(() => {
             userClick.push(panelColors[0])
             console.log(userClick)
             userPatternCheck()
-            animatePress()
+            // animatePress()
         } else {
             if ($(event.currentTarget).hasClass('panel top-right')) {
                 console.log(panelColors[1])
                 userClick.push(panelColors[1])
                 console.log(userClick)
                 userPatternCheck()
-                animatePress()
+                // animatePress()
 
             } else {
                 if ($(event.currentTarget).hasClass('panel bottom-left')) {
@@ -34,7 +34,7 @@ $(() => {
                     userClick.push(panelColors[2])
                     console.log(userClick)
                     userPatternCheck()
-                    animatePress()
+                    // animatePress()
 
                 } else {
                     if ($(event.currentTarget).hasClass('panel bottom-right')) {
@@ -42,13 +42,15 @@ $(() => {
                         userClick.push(panelColors[3])
                         console.log(userClick)
                         userPatternCheck()
-                        animatePress()
+                        // animatePress()
 
                     }
                 }
             }
 
         }
+
+       
 
 
     })
@@ -64,26 +66,32 @@ $(() => {
     const userPatternCheck = () => {
         for (let i = 0; i < userClick.length ; i++) {
             if (userClick[i] === gamePattern[i]) {
-                console.log('success')
-                simonStart()
-            } else {
-                console.log('Game Over!')
-            }
-        }
-
-    }
-
-    const nextSequence = () => {
-        userPatternCheck = []
-        level ++
-    }
-
-    const animatePress = () => {
-        if ((panelColors).fadeIn(100).fadeOut(100).fadeIn(100)) {
-            console.log('.flash')
-        }
+                setTimeout(() => {
+                   nextSequence() 
+                }, 1000);
         
+            } else {
+                $('body').addClass('game-over')
+                $('level').text('game over, click start to try again')
+
+                setTimeout(() => {
+                    $('body').removeClass('game-over')
+                }, 200);
+            }
+
+
+        }
+
     }
+
+    let nextSequence = () => {
+        level ++
+        $('#level').text('level' + level)
+        let randomColorPicked = panelColors[gamePattern]
+        gamePattern.push(randomColorPicked)
+    }
+
+
 
 
 })
