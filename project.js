@@ -1,4 +1,4 @@
-// Got the idea to use this set up of code from https://www.youtube.com/watch?v=0n3ez0vTAMs
+// Got the idea to use this set up of code from https://www.youtube.com/watch?v=0n3ez0vTAMs and https://www.youtube.com/watch?v=WD-nUlycMX4 
 
 const panelColors = ['green', 'red', 'indigo', 'yellow']
 
@@ -21,14 +21,15 @@ $(() => {
             userClick.push(panelColors[0])
             console.log(userClick)
             userPatternCheck()
-            // animatePress()
+            pressedColor()
+
         } else {
             if ($(event.currentTarget).hasClass('panel top-right')) {
                 console.log(panelColors[1])
                 userClick.push(panelColors[1])
                 console.log(userClick)
                 userPatternCheck()
-                // animatePress()
+                pressedColor()
 
             } else {
                 if ($(event.currentTarget).hasClass('panel bottom-left')) {
@@ -36,7 +37,7 @@ $(() => {
                     userClick.push(panelColors[2])
                     console.log(userClick)
                     userPatternCheck()
-                    // animatePress()
+                    pressedColor()
 
                 } else {
                     if ($(event.currentTarget).hasClass('panel bottom-right')) {
@@ -44,7 +45,7 @@ $(() => {
                         userClick.push(panelColors[3])
                         console.log(userClick)
                         userPatternCheck()
-                        // animatePress()
+                        pressedColor()
 
                     }
                 }
@@ -59,7 +60,7 @@ $(() => {
     const simonStart = () => {
         const $gamePattern = Math.floor(Math.random() * 4)
         gamePattern.push(panelColors[$gamePattern])
-        console.log($gamePattern)
+        // console.log($gamePattern)
         console.log(gamePattern)
 
     }
@@ -72,6 +73,7 @@ $(() => {
                 nextSequence()
             } else if (gamePattern[i] !== userClick[i]) {
                 correctPick = false
+                alert('Game Over')
             }
         
             
@@ -94,6 +96,14 @@ $(() => {
         gamePattern = []
         userClick = []
     }
+
+    const pressedColor = (currentColor) => {
+        $('#panelColors' + currentColor).addClass('flash')
+        setTimeout(() => {
+            $('#panelColors' + currentColor).removeClass('flash')
+        }, 100);
+        }
+    
 
 
 
