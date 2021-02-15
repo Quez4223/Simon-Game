@@ -19,14 +19,14 @@ $(() => {
             userClick.push(panelColors[0])
             console.log(userClick)
             userPatternCheck()
-            // animatePress()
+            animatePress()
         } else {
             if ($(event.currentTarget).hasClass('panel top-right')) {
                 console.log(panelColors[1])
                 userClick.push(panelColors[1])
                 console.log(userClick)
                 userPatternCheck()
-                // animatePress()
+                animatePress()
 
             } else {
                 if ($(event.currentTarget).hasClass('panel bottom-left')) {
@@ -34,7 +34,7 @@ $(() => {
                     userClick.push(panelColors[2])
                     console.log(userClick)
                     userPatternCheck()
-                    // animatePress()
+                    animatePress()
 
                 } else {
                     if ($(event.currentTarget).hasClass('panel bottom-right')) {
@@ -42,7 +42,7 @@ $(() => {
                         userClick.push(panelColors[3])
                         console.log(userClick)
                         userPatternCheck()
-                        // animatePress()
+                        animatePress()
 
                     }
                 }
@@ -64,9 +64,6 @@ $(() => {
     const userPatternCheck = () => {
         for (let i = 0; i < userClick.length ; i++) {
             if (userClick[i] === gamePattern[i]) {
-                setTimeout(function()  {
-                    simonStart()
-                }, 1000)
                 console.log('success')
                 simonStart()
             } else {
@@ -76,12 +73,17 @@ $(() => {
 
     }
 
-    // const animatePress = (event) => {
-    //     if ($(event.currentTarget).hasClass('panel top-left').addClass('.flash')) {
-    //         console.log('.flash')
-        // }            
+    const nextSequence = () => {
+        userPatternCheck = []
+        level ++
+    }
+
+    const animatePress = () => {
+        if ((panelColors).fadeIn(100).fadeOut(100).fadeIn(100)) {
+            console.log('.flash')
+        }
         
-    // }
+    }
 
 
 })
