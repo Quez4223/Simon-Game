@@ -2,13 +2,15 @@
 
 const panelColors = ['green', 'red', 'indigo', 'yellow']
 
-const gamePattern = []
+let gamePattern = []
 
-const userClick = []
+let userClick = []
 
-const started = false
+let started = false
 
 let level = 0
+
+let correctPick = false
 
 
 $(() => {
@@ -65,19 +67,14 @@ $(() => {
 
     const userPatternCheck = () => {
         for (let i = 0; i < userClick.length ; i++) {
-            if (userClick[i] === gamePattern[i]) {
-                setTimeout(() => {
-                   nextSequence() 
-                }, 1000);
-        
-            } else {
-                $('body').addClass('game-over')
-                $('level').text('game over, click start to try again')
-
-                setTimeout(() => {
-                    $('body').removeClass('game-over')
-                }, 200);
+            if (gamePattern[i] === userClick[i]) {
+                correctPick = true
+                nextSequence()
+            } else if (gamePattern[i] !== userClick[i]) {
+                correctPick = false
             }
+        
+            
 
 
         }
@@ -85,10 +82,17 @@ $(() => {
     }
 
     let nextSequence = () => {
+        reset()
+        simonStart()
         level ++
-        $('#level').text('level' + level)
+        $('#level').text('level ' + level)
         let randomColorPicked = panelColors[gamePattern]
         gamePattern.push(randomColorPicked)
+    }
+
+    let reset = () => {
+        gamePattern = []
+        userClick = []
     }
 
 
