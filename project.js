@@ -21,7 +21,7 @@ $(() => {
             console.log(panelColors[0])
             userClick.push(panelColors[0])
             console.log(userClick)
-            playSound()
+            $('audio#clip1')[0].play()
             userPatternCheck()
             pressedColor()
 
@@ -30,6 +30,7 @@ $(() => {
                 console.log(panelColors[1])
                 userClick.push(panelColors[1])
                 console.log(userClick)
+                $('audio#clip2')[0].play()
                 userPatternCheck()
                 pressedColor()
 
@@ -38,6 +39,7 @@ $(() => {
                     console.log(panelColors[2])
                     userClick.push(panelColors[2])
                     console.log(userClick)
+                    $('audio#clip3')[0].play()
                     userPatternCheck()
                     pressedColor()
 
@@ -46,6 +48,7 @@ $(() => {
                         console.log(panelColors[3])
                         userClick.push(panelColors[3])
                         console.log(userClick)
+                        $('audio#clip4')[0].play()
                         userPatternCheck()
                         pressedColor()
 
@@ -105,15 +108,13 @@ $(() => {
     }
 
     const pressedColor = (currentColor) => {
-        $('.panel' + currentColor).addClass('.flash')
+        $('.panel' + currentColor).addClass('#flash')
         setTimeout(() => {
-            $('.panel' + currentColor).removeClass('.flash')
+            $('.panel' + currentColor).removeClass('#flash')
         }, 100);
         }
 
-        const playSound = () => {
-            $('#audio')
-        }
+        
 
         
     
