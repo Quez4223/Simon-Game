@@ -52,8 +52,8 @@ h1 {
     box-shadow: 0px 2px 5px black;
 }
 
-.flash {
-    border-color: white;
+flash {
+    border-color: cyan;
     box-shadow: 0 0 20px whitesmoke;
 }
 
@@ -63,3 +63,26 @@ p {
     color: white;
     font-family: cursive;
 }
+
+.bottom-left:hover {
+    background-color: plum;
+    box-shadow: 0 2px 5px;
+}
+
+.bottom-right:hover {
+    background-color:lightyellow;
+    box-shadow: 0 2px 5px;
+}
+
+
+.top-left:hover {
+    background-color: lightgreen;
+    box-shadow: 0 2px 5px;
+}
+
+
+.top-right:hover {
+    background-color: lightcoral;
+    box-shadow: 0 2px 5px;
+}
+
