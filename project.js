@@ -108,9 +108,9 @@ $(() => {
     }
 
     const pressedColor = (currentColor) => {
-        $('.panel' + currentColor).addClass('#flash')
+        $('.panel' + currentColor).css('flash')
         setTimeout(() => {
-            $('.panel' + currentColor).removeClass('#flash')
+            
         }, 100);
         }
 
