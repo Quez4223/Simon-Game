@@ -1,4 +1,5 @@
 // Got the idea to use this set up of code from https://www.youtube.com/watch?v=0n3ez0vTAMs and https://www.youtube.com/watch?v=WD-nUlycMX4 
+// Game only works in the DOM as of now and I cannot figure out how to make the visual version work. I have it the way I want it to look but not how I want it to function.
 
 const panelColors = ['green', 'red', 'indigo', 'yellow']
 
@@ -110,7 +111,7 @@ $(() => {
     const pressedColor = (currentColor) => {
         $('.panel' + currentColor).css('flash')
         setTimeout(() => {
-            
+
         }, 100);
         }
 
