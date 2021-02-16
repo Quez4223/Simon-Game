@@ -13,6 +13,7 @@ let level = 0
 let correctPick = false
 
 
+
 $(() => {
     $('.panel').on('click', (event) => {
         const $panelColor = panelColors
@@ -20,6 +21,7 @@ $(() => {
             console.log(panelColors[0])
             userClick.push(panelColors[0])
             console.log(userClick)
+            playSound()
             userPatternCheck()
             pressedColor()
 
@@ -60,6 +62,9 @@ $(() => {
     const simonStart = () => {
         const $gamePattern = Math.floor(Math.random() * 4)
         gamePattern.push(panelColors[$gamePattern])
+        setInterval(() => {
+            pressedColor()
+        }, 500);
         // console.log($gamePattern)
         console.log(gamePattern)
 
@@ -70,7 +75,9 @@ $(() => {
         for (let i = 0; i < userClick.length ; i++) {
             if (gamePattern[i] === userClick[i]) {
                 correctPick = true
-                nextSequence()
+                setTimeout(() => {
+                    nextSequence()
+                }, 500);
             } else if (gamePattern[i] !== userClick[i]) {
                 correctPick = false
                 alert('Game Over')
@@ -98,11 +105,17 @@ $(() => {
     }
 
     const pressedColor = (currentColor) => {
-        $('#panelColors' + currentColor).addClass('flash')
+        $('.panel' + currentColor).addClass('.flash')
         setTimeout(() => {
-            $('#panelColors' + currentColor).removeClass('flash')
+            $('.panel' + currentColor).removeClass('.flash')
         }, 100);
         }
+
+        const playSound = () => {
+            $('#audio')
+        }
+
+        
     
 
 
